@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ticket Details</title>
+  <script src="https://cdn.jsdelivr.net/gh/davidshimjs/qrcodejs/qrcode.min.js"></script>
+  <link rel="stylesheet" href="styled.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Ticket Details</h1>
+    <div class="leee">
+        <div id="qr-code"></div>
+    </div>
+    <button onclick="copyToClipboard()">Copy QR Code</button>
+  </div>
+
+  <script>
+    window.onload = function() {
+        copyToClipboard();
+        generateQRCodeFromLocalStorage();
+        console.log('Page loaded!');
+    };
+    function copyToClipboard() {
+        const qrCodeText = document.getElementById('qr-code').innerText;
+        navigator.clipboard.writeText(qrCodeText)
+        .then(() => {
+        alert('QR code copied to clipboard!');
+    })
+    .catch((error) => {
+      console.error('Failed to copy QR code to clipboard: ', error);
+    });
+    }
+
+    function generateQRCodeFromLocalStorage() {
+        const ticketDetailsString = localStorage.getItem('ticketDetails');
+
+        if (ticketDetailsString) {
+            const ticketDetails = JSON.parse(ticketDetailsString);
+            const qrCode = new QRCode('qr-code', {
+            text: JSON.stringify(ticketDetails),
+            width: 200,
+            height: 200,
+            });
+        } else {
+            console.error('Ticket details not found in local storage.');
+        }
+    }
+
+  </script>
+</body>
+</html>

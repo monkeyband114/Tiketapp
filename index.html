@@ -1,39 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Stadium Ticket Sales</title>
-  <script src="https://cdn.jsdelivr.net/gh/davidshimjs/qrcodejs/qrcode.min.js"></script>
-  <link rel="stylesheet" href="styles.css">
+<title>FUPRE Campus Map</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
-  <div class="container">
-    <h1>Stadium Ticket Sales</h1>
-    <div class="ticket-types">
-      <div class="ticket-option">
-        <input type="radio" id="vip" name="ticket-type" value="VIP">
-        <label for="vip">VIP Ticket (₦15,000)</label>
-      </div>
-      <div class="ticket-option">
-        <input type="radio" id="basic" name="ticket-type" value="Basic">
-        <label for="basic">Basic Ticket (₦5000)</label>
-      </div>
-      <div class="ticket-option">
-        <input type="radio" id="regular" name="ticket-type" value="Regular">
-        <label for="regular">Regular Ticket (₦10,500)</label>
-      </div>
-    </div>
-    <div class="user-details">
-      <h2>Enter Your Details</h2>
-      <input type="text" id="name" placeholder="Name">
-      <input type="text" id="email" placeholder="Email">
-      <input type="text" id="card-number" placeholder="Card Number">
-      <input type="text" id="cvv" placeholder="CVV">
-    </div>
-    <button onclick="buyTicket()">Buy Ticket</button>
-  </div>
 
-  <script src="script.js"></script>
+<header>
+  <video autoplay muted loop id="banner-video" poster="video-poster.jpg"> <source src="/Stadium_Trim.mp4" type="video/mp4"> </video>
+  <div class="content">
+    <h1>Stadium Management NGN</h1>
+    <p>Purchase tickets virtually with ease.</p>
+  </div>
+  <nav class="mx-4 text-white absolute mt-[119%] sm:mt-[85%] md:mt-[75%] lg:mt-[55%] xl:mt-[40%] flex flex-row">
+    <ul class="text-xl flex gap-4">
+      <li class="border shadow-xl rounded-xl p-2"><a href="index2.html">Buy Tickets</a></li>
+      <li class="border shadow-xl rounded-xl p-2"><a href="ticket.html">See Current QRCode</a></li>
+      
+    </ul>
+  </nav>
+</header>
+
 </body>
 </html>
